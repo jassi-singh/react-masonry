@@ -8,6 +8,14 @@
   ],
   "author": "jassi-singh",
   "license": "MIT",
+  "homepage": "https://github.com/jassi-singh/react-masonry",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jassi-singh/react-masonry"
+  },
+  "bugs": {
+    "url": "https://github.com/jassi-singh/react-masonry/issues"
+  },
   "scripts": {
     "build": "tsc"
   },
