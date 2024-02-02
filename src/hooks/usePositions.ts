@@ -6,7 +6,7 @@ interface Position {
 }
 
 const getBoxHeights = (boxesRefs: MutableRefObject<HTMLDivElement[]>) =>
-  boxesRefs.current.map((box) => box?.getBoundingClientRect().height);
+  boxesRefs.current.map((box) => box?.getBoundingClientRect().height ?? 0);
 
 export const usePositions = (
   boxesRefs: MutableRefObject<HTMLDivElement[]>,
@@ -55,7 +55,6 @@ export const usePositions = (
   };
 
   useEffect(() => {
-    // Reset the loading state if you expect new images to load
     setAllImagesLoaded(false);
     checkAllImagesLoaded(boxesRefs);
 
