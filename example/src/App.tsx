@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { faker } from "@faker-js/faker";
 import { motion } from "framer-motion";
-import Masonry from "@jassi/react-masonry";
+import Masonry from '@jassisingh/react-masonry';
 
 const createRandomData = () => ({
   id: faker.string.uuid(),
