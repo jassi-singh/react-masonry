@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Item from "./components/Item";
 import Masonry from "./components/Masonry";
-import { motion } from "framer-motion";
 import { faker } from "@faker-js/faker";
 
 const createRandomData = () => ({
@@ -34,9 +33,7 @@ function App() {
       >
         {items.map((item) => (
           <div key={item.id}>
-            <motion.div layout>
-              <Item deleteItem={handleDelete} {...item} />
-            </motion.div>
+            <Item deleteItem={handleDelete} {...item} />
           </div>
         ))}
       </Masonry>

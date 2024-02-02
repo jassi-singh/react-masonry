@@ -7,7 +7,6 @@ export const useWrapperWidth = (
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
-      console.log("wrapper width");
       for (const entry of entries) {
         setWidth(entry.contentRect.width);
       }

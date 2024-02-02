@@ -9,7 +9,6 @@ export const useColumnWidth = (
 
   useEffect(() => {
     if (!wrapperWidth) return;
-    console.log("column width");
 
     const width = (wrapperWidth - (columnCount - 1) * padding) / columnCount;
 

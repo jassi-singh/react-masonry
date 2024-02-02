@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import { useWindowWidth } from './useWindowWidth';
 
 export const useColumnCount = (columnBreakPoints: {
   [key: number]: number;
 }) => {
-  const getColumnCount = () => {
+  const windowWidth = useWindowWidth();
+  const [columnCount, setColumnCount] = useState(1);
+
+  useEffect(() => {
     const sortedBreakpoints = Object.keys(columnBreakPoints)
       .map(Number)
       .sort((a, b) => a - b);
@@ -18,22 +22,8 @@ export const useColumnCount = (columnBreakPoints: {
       }
     }
 
-    return count;
-  };
-
-  const [columnCount, setColumnCount] = useState(getColumnCount);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setColumnCount(getColumnCount());
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [columnBreakPoints]);
+    setColumnCount(count);
+  }, [columnBreakPoints, windowWidth]);
 
   return columnCount;
 };

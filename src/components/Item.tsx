@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface ItemProps {
   id: string;
   text: string;
@@ -7,11 +9,11 @@ interface ItemProps {
 
 const Item = ({ id, text, url, deleteItem }: ItemProps) => {
   return (
-    <div onClick={() => deleteItem(id)} className="item">
+    <motion.div layout onClick={() => deleteItem(id)} className="item">
       item - {id}
       <div>{text}</div>
       <img src={url} style={{ objectFit: "contain", width: "100%" }} />
-    </div>
+    </motion.div>
   );
 };
 

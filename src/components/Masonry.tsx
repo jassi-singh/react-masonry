@@ -38,7 +38,7 @@ const Masonry: FunctionComponent<PropsWithChildren<MasonryProps>> = ({
   return (
     <div
       ref={wrapperRef}
-      style={{ position: "relative", height: containerHeight }}
+      style={{ position: "relative", height: containerHeight, opacity }}
     >
       {Children.map(children, (child, idx) => {
         if (!isValidElement(child)) return child;
@@ -46,11 +46,11 @@ const Masonry: FunctionComponent<PropsWithChildren<MasonryProps>> = ({
           ...child.props,
           ref: (ref: HTMLDivElement) => (boxesRefs.current[idx] = ref),
           style: {
+            ...child.props.styles,
             position: "absolute",
             width: colWidth,
             left: positions[idx]?.left,
             top: positions[idx]?.top,
-            opacity: opacity,
           },
         });
       })}

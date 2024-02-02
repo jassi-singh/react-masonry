@@ -60,8 +60,6 @@ export const usePositions = (
     checkAllImagesLoaded(boxesRefs);
 
     if (!columnWidth || !allImagesLoaded) return;
-    console.log("positions");
-
     const positions: Position[] = [];
     const boxHeights = getBoxHeights(boxesRefs);
     const columnsHeights: number[] = new Array(columnCount).fill(0);
