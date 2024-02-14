@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { faker } from "@faker-js/faker";
 import { motion } from "framer-motion";
-import Masonry from '@jassisingh/react-masonry';
+import Masonry from "@jassisingh/react-masonry";
 
 const createRandomData = () => ({
   id: faker.string.uuid(),
@@ -51,10 +51,17 @@ interface ItemProps {
 }
 
 const Item = ({ id, text, url, deleteItem }: ItemProps) => {
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setData(text);
+    }, 5000);
+  }, []);
   return (
     <motion.div layout onClick={() => deleteItem(id)} className="item">
       item - {id}
-      <div>{text}</div>
+      <div>{data}</div>
       <img src={url} style={{ objectFit: "contain", width: "100%" }} />
     </motion.div>
   );
