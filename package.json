@@ -18,7 +18,8 @@
     "url": "https://github.com/jassi-singh/react-masonry/issues"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "peerDependencies": {
     "react": "^18.2.0",
