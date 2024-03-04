@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.0",
-    "@jassisingh/react-masonry": "^1.0.3",
+    "@jassisingh/react-masonry": "^1.0.4",
     "framer-motion": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

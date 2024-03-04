@@ -34,7 +34,7 @@ export const usePositions = (
 
       const imageLoadPromises = allImages.map((img) => {
         return new Promise<void>((imageResolve) => {
-          if (img.complete && img.naturalHeight !== 0) {
+          if (img.complete) {
             imageResolve();
           } else {
             img.onload = () => imageResolve();
