@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useWindowWidth } from './useWindowWidth';
+import { useWindowWidth } from "./useWindowWidth";
 
 export const useColumnCount = (columnBreakPoints: {
   [key: number]: number;
@@ -15,7 +15,7 @@ export const useColumnCount = (columnBreakPoints: {
     let count = 1;
 
     for (const breakpoint of sortedBreakpoints) {
-      if (window.innerWidth >= breakpoint) {
+      if (windowWidth >= breakpoint) {
         count = columnBreakPoints[breakpoint];
       } else {
         break;
